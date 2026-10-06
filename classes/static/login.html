@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar – Agenda Buffet</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="topo-in">
+    <div class="logo"><i>V</i><s></s>b<small>Agenda de eventos</small></div>
+  </div>
+</header>
+<main class="conteudo" style="display:flex;justify-content:center">
+  <form method="post" action="/login" class="card" style="width:100%;max-width:420px;align-self:flex-start;margin-top:30px">
+    <h2>Entrar</h2>
+    <p id="erro" class="note" style="color:#C62828;font-weight:700" hidden>E-mail ou senha incorretos.</p>
+    <input type="hidden" name="_csrf" id="csrf">
+    <label><span>E-mail</span><input name="username" type="email" required autofocus></label>
+    <label style="margin-top:10px"><span>Senha</span><input name="password" type="password" required></label>
+    <button class="btn" type="submit">Entrar</button>
+  </form>
+</main>
+<footer class="rodape">
+  <div><b>V | b</b> &nbsp; Agenda de eventos</div>
+</footer>
+<script>
+  if (location.search.includes("erro")) document.getElementById("erro").hidden = false;
+  const m = document.cookie.match(/(?:^|; )XSRF-TOKEN=([^;]*)/);
+  if (m) document.getElementById("csrf").value = decodeURIComponent(m[1]);
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* Bebas Neue (SIL Open Font License) – usada nos números */
+@font-face {
+  font-family: "NumBebas";
+  src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap;
+  unicode-range: U+0030-0039;
+}
+@font-face {
+  font-family: "Bebas";
+  src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root{--gold:#B37400;--ink:#000;--paper:#fff;--bg:#faf8f4;--soft:#f3efe6;--line:#e4ddcf;--mut:#6b6558;
+--g:#2E7D32;--y:#E0A800;--r:#C62828;--rad:14px;--sombra:0 4px 16px rgba(0,0,0,.06)}
+*,*:before,*:after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:#1a1a1a;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column;min-height:100vh}
+[hidden]{display:none!important}
+
+/* ---------- Cabeçalho ---------- */
+.topo{background:var(--ink);color:#fff;border-bottom:3px solid var(--gold);padding-bottom:10px}
+.topo-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 28px 8px}
+.logo{font:700 34px/1 Georgia,"Times New Roman",serif;display:flex;align-items:center;gap:9px}
+.logo i{font-style:normal;color:var(--gold)}
+.logo s{display:inline-block;width:2px;height:28px;background:#fff}
+.logo small{font:500 12px system-ui,sans-serif;color:#d9c9a3;margin-left:8px;letter-spacing:.1em;text-transform:uppercase}
+.tg{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;color:#fff}
+.tg input{accent-color:var(--gold);width:18px;height:18px}
+nav{display:flex;gap:8px;padding:4px 28px 0;overflow-x:auto}
+nav button{background:transparent;border:1.5px solid transparent;color:#fff;padding:8px 20px;border-radius:999px;font:600 14px system-ui,sans-serif;cursor:pointer;white-space:nowrap;transition:background .15s}
+nav button:hover{background:#222}
+nav button[aria-selected=true]{background:var(--gold);color:#000}
+
+/* ---------- Conteúdo ---------- */
+.conteudo{flex:1;width:100%;padding:26px 28px 40px}
+h2{font:700 26px Georgia,serif;margin:0 0 16px}
+h3{font:700 16px Georgia,serif;margin:22px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);display:flex;align-items:center}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible,h3:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ---------- Formulário ---------- */
+select,input,textarea{font:inherit;color:#111;background:#fff;border:1.5px solid #1a1a1a;padding:9px 12px;width:100%;border-radius:10px}
+input[type=checkbox]{width:auto}
+label{display:block;font-size:13px;font-weight:600;color:#333}
+label span{display:block;margin-bottom:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.bar select{width:auto;min-width:130px}
+.leg{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin-left:auto;color:var(--mut)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.v{background:var(--g)}.a{background:var(--y)}.n{background:var(--r)}
+#novo{background:#fff;border:1.5px solid var(--ink);border-radius:18px;padding:24px 26px;box-shadow:var(--sombra)}
+.sec-t{cursor:pointer;user-select:none}
+.sec-t:after{content:"▾";margin-left:auto;color:var(--gold);font-size:18px}
+.sec-t.fechada:after{content:"▸"}
+.sec-corpo{padding-top:4px}
+.sw{display:flex;gap:10px;align-items:center}
+.sw input{width:20px;height:20px;accent-color:var(--gold)}
+.tot{font-weight:700;padding:10px 12px;border:1.5px dashed #999;border-radius:10px;background:var(--soft)}
+#recalc + .note{display:none}
+.btn{background:var(--gold);color:#000;border:1.5px solid var(--ink);padding:11px 26px;border-radius:999px;font:700 15px system-ui,sans-serif;cursor:pointer;margin:18px 10px 0 0;transition:.15s}
+.btn:hover{background:var(--ink);color:var(--gold)}
+.btn.sec{background:#fff}
+.btn.sec:hover{background:var(--ink);color:#fff}
+
+/* ---------- Resumos ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:#fff;border:1.5px solid var(--ink);border-radius:var(--rad);padding:10px 16px;box-shadow:var(--sombra)}
+.kpi span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut)}
+.kpi b{font:700 21px Georgia,serif}
+
+/* ---------- Calendário ---------- */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);border:2px solid var(--ink);border-radius:var(--rad);overflow:hidden;background:#fff;box-shadow:var(--sombra)}
+.cal>*{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:104px;padding:6px;font-size:13px;overflow:hidden}
+.cal .h{min-height:0;font-weight:700;text-align:center;background:var(--ink);color:#fff;padding:9px 4px;border-color:#222}
+.cal .d{cursor:pointer;background:#fff;color:#1a1a1a;text-align:left;font-family:inherit;transition:background .12s}
+.cal .d:hover{background:var(--soft)}
+.cal .d.sel{outline:3px solid var(--gold);outline-offset:-3px;border-radius:6px}
+.chip{display:block;margin-top:4px;padding:2px 8px;color:#000;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:6px}
+.chip.n{color:#fff}
+@media(max-width:700px){
+  .cal>*{min-height:52px;padding:4px}
+  .chip{height:9px;width:9px;padding:0;font-size:0;display:inline-block;margin:3px 3px 0 0;border-radius:50%}
+  .conteudo,.topo-in,nav{padding-left:14px;padding-right:14px}
+  #novo{padding:18px 16px}
+  .logo{font-size:30px}
+}
+
+/* ---------- Cartões e detalhes ---------- */
+.card{border:1.5px solid var(--ink);border-radius:var(--rad);padding:16px;margin-top:16px;background:#fff;box-shadow:var(--sombra)}
+.ev{border-top:1px solid var(--line);padding:10px 0}
+.ev:first-of-type{border-top:0}
+.ev b{font-family:Georgia,serif}
+.tag{display:inline-block;padding:1px 10px;font-size:12px;font-weight:700;color:#000;border-radius:999px}
+.tag.n{color:#fff}
+.acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.mini{background:#fff;color:#000;border:1.5px solid var(--ink);padding:5px 14px;border-radius:999px;font:600 13px system-ui,sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:.12s}
+.mini:hover{background:var(--ink);color:#fff}
+.mini.perigo{border-color:var(--r);color:var(--r)}
+.mini.perigo:hover{background:var(--r);color:#fff}
+
+/* ---------- Tabelas ---------- */
+.tw{overflow-x:auto;background:#fff;border:1.5px solid var(--ink);border-radius:var(--rad);box-shadow:var(--sombra)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border:0;border-bottom:1px solid var(--line);padding:10px 12px;text-align:left}
+th{background:var(--ink);color:#fff}
+tr:last-child td,tr:last-child th{border-bottom:0}
+td.r,th.r{text-align:right}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+.masked .val{color:transparent;text-shadow:0 0 8px #000;user-select:none}
+
+/* ---------- Janela após salvar ---------- */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
+.modal-box{background:#fff;border:2px solid var(--ink);border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.3);padding:28px;max-width:460px;width:100%;text-align:center}
+.modal-box h2{margin-bottom:6px}
+.modal-box .btn{margin:10px 6px 0}
+
+/* ---------- Rodapé ---------- */
+.rodape{background:var(--ink);color:#d9c9a3;border-top:3px solid var(--gold);padding:14px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px}
+.rodape b{color:var(--gold);font-family:Georgia,serif;font-size:15px}
+
+/* ---------- Impressão ---------- */
+#ficha{display:none}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;display:block}
+  .topo,.rodape,.conteudo,.modal{display:none!important}
+  #ficha{display:block;color:#000}
+  #ficha h1{font:700 24px Georgia,serif;border-bottom:4px solid #000;padding-bottom:6px;margin:0 0 4px}
+  #ficha .sub{margin:0 0 14px;color:#444}
+  #ficha h4{font:700 14px Georgia,serif;margin:14px 0 4px;text-transform:uppercase;letter-spacing:.05em}
+  #ficha table{width:100%;border-collapse:collapse;font-size:13px}
+  #ficha th,#ficha td{border:1px solid #000;padding:6px 8px;background:#fff;color:#000}
+  #ficha th{width:34%;text-align:left}
+  #ficha table.rel th{width:auto;background:#000;color:#fff}
+  #ficha .assin{display:flex;gap:40px;margin-top:60px}
+  #ficha .assin div{flex:1;border-top:1px solid #000;padding-top:4px;text-align:center;font-size:12px}
+  #ficha .rod{margin-top:24px;font-size:11px;color:#444;text-align:center}
+}
+
+/* ---------- Números em Bebas Neue ---------- */
+body, input, select, textarea, .btn, .mini, nav button {
+  font-family: "NumBebas", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-synthesis: none;
+}
+h2, h3, .logo, .ev b {
+  font-family: "NumBebas", Georgia, "Times New Roman", serif;
+  font-synthesis: none;
+}
+.kpi b, .cal .d b, .val, td.r {
+  font-family: "Bebas", "NumBebas", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .03em;
+}
+.kpi b { font-size: 26px; }
