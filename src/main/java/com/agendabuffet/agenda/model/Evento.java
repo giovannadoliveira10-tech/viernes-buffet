@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "evento")
@@ -44,4 +46,8 @@ public class Evento {
 
     @Column(columnDefinition = "TEXT")
     public String observacao;
+    public java.time.LocalDateTime agradecimentoEnviadoEm;
+
+    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL, orphanRemoval = true)
+    public List<ProfissionalEvento> profissionais = new ArrayList<>();
 }

@@ -2,10 +2,12 @@ package com.agendabuffet.agenda.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "profissional_evento")
-public class ProfissionalEvento {
+@Table(name = "pagamento")
+public class Pagamento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
@@ -13,7 +15,11 @@ public class ProfissionalEvento {
     @ManyToOne @JoinColumn(name = "evento_id", nullable = false)
     public Evento evento;
 
-    public String funcao;   // CERIMONIALISTA, ORGANIZADOR ou DJ
-    public String nome;
-    public String telefone;
+    public LocalDate data;
+
+    @Column(precision = 10, scale = 2)
+    public BigDecimal valor;
+
+    public String forma;        // PIX, CARTAO, DINHEIRO, TRANSFERENCIA ou OUTRO
+    public String observacao;
 }
